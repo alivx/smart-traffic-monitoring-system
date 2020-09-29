@@ -1,0 +1,32 @@
+@startuml
+title System Database Save
+
+activate Camera
+activate System
+
+Camera -> System: Send Frames
+deactivate Camera
+activate ObjectDetection
+
+System -> ObjectDetection: Check if there is object crossed line
+
+activate CSV
+
+ObjectDetection -> CSV : Save Result into CSV file
+activate Dashboard
+ObjectDetection -> Dashboard : Send events
+deactivate Dashboard
+
+deactivate CSV
+
+deactivate ObjectDetection
+
+activate Database
+
+System  -> Database : Parse CSV and insert it into db
+deactivate  Database
+deactivate System
+
+
+
+@enduml

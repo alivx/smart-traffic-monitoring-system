@@ -1,0 +1,22 @@
+<script type='text/javascript'>
+ $(function() {
+   Dashing.gridsterLayout('[{"col":3,"row":2,"size_x":2,"size_y":1},{"col":2,"row":1,"size_x":2,"size_y":1},{"col":1,"row":2,"size_x":2,"size_y":1},{"col":1,"row":1,"size_x":1,"size_y":1}]')
+ });
+ </script>
+<% content_for :title do %>STMS | AOU<% end %>
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+    <div data-id="stat1" data-view="stat1" data-title="Objects Status" data-text="Status Job."></div></li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+    <div data-id="stat2" data-view="stat2" data-title="System Status" data-text="Status Job."></div></li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+    <div data-id="stat3" data-view="stat3" data-title="Line Status" data-text="Status Job."></div></li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"><div data-view="Image" data-image="/logo.png"></div>
+
+    </li>
+  </ul>
+</div>

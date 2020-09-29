@@ -1,0 +1,23 @@
+@startuml
+title System Trigger/Alert Sequence Diagram
+activate Database
+activate System
+System <- Database  : fetch settings
+deactivate Database
+activate Camera
+Camera -> System: Frames fetch
+deactivate Camera
+activate ObjectDetection
+System -> ObjectDetection : Check if found Object
+deactivate ObjectDetection
+deactivate System
+activate Push
+ObjectDetection -> Push: Send push message
+deactivate Push
+activate IOT
+ObjectDetection -> IOT : Run a trigger
+deactivate IOT
+activate Email
+ObjectDetection -> Email : send email alerts
+deactivate Email
+@enduml

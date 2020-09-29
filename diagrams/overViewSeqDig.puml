@@ -1,0 +1,18 @@
+@startuml
+title System Overview Sequence Diagram
+activate CameraOrVideo
+activate getObject
+getObject -> CameraOrVideo  : Connect
+CameraOrVideo -> getObject: Frames
+deactivate CameraOrVideo
+getObject -> ObjectDetection: Frame
+activate ObjectDetection
+activate getSpeed
+ObjectDetection -> getSpeed :Get Speed inforamtion
+getSpeed -> ObjectDetection: direction, speed
+deactivate getSpeed
+ObjectDetection -> getObject: Object, Count
+deactivate getObject
+deactivate ObjectDetection
+
+@enduml

@@ -1,0 +1,6 @@
+
+END=5
+for ((i=1;i<=END;i++)); do
+    CPU="$(grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage " %"}')"
+    curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "text": "${CPU}" }' \http://0.0.0.0:3030/widgets/stat1
+done
